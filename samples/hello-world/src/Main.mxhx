@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<m:Application xmlns:mx="https://ns.mxhx.dev/2024/basic"
+	xmlns:m="https://ns.mxhx.dev/minimalcomps/mxhx">
+	<m:PushButton id="button" label="Click Me" x="20.0" y="20.0"/>
+</m:Application>

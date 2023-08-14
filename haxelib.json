@@ -1,0 +1,16 @@
+{
+  "name": "mxhx-minimalcomps",
+  "url": "https://mxhx.dev/",
+  "license": "MIT",
+  "tags": ["minimalcomps", "xml", "mxhx", "gui"],
+  "description": "Add support for MXHX declarative XML components to MinimalComps",
+  "version": "1.0.0-alpha.1",
+  "classPath": "src",
+  "dependencies": {
+    "minimalcomps": "git:https://github.com/jasonsturges/minimalcomps-openfl.git",
+    "mxhx-component": "git:https://github.com/mxhx-dev/mxhx-component.git",
+    "feathersui-binding": "git:https://github.com/feathersui/feathersui-binding.git"
+  },
+  "contributors": ["bowlerhat"],
+  "releasenote": "Initial alpha release"
+}

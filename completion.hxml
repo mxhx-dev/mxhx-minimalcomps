@@ -1,0 +1,4 @@
+-cp src
+-lib minimalcomps
+-lib mxhx-component
+-lib feathersui-binding
