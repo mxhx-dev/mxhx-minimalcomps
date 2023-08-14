@@ -28,31 +28,4 @@ jobs:
         run: |
           haxelib run openfl build neko
           haxelib run openfl build html5
-          haxelib run openfl build flash
           haxelib run openfl build hl
-
-  build-air:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: joshtynjala/setup-adobe-air-action@v2
-        with:
-          air-version: "33.1"
-          accept-license: true
-      - uses: krdlab/setup-haxe@v1
-        with:
-          haxe-version: 4.2.5
-      - name: Set up Haxelib dependencies
-        run: |
-          haxelib install lime 8.0.0 --quiet
-          haxelib install openfl 9.2.0 --quiet
-          haxelib git minimalcomps https://github.com/jasonsturges/minimalcomps-openfl.git --quiet
-          haxelib git feathersui-binding https://github.com/feathersui/feathersui-binding.git --quiet
-          haxelib git mxhx-parser https://github.com/mxhx-dev/mxhx-parser.git --quiet
-          haxelib git mxhx-component https://github.com/mxhx-dev/mxhx-component.git --quiet
-          haxelib dev mxhx-minimalcomps ${{ github.workspace }}
-          haxelib run lime config AIR_SDK ${{ env.AIR_HOME }}
-      - name: Build samples/hello-world
-        working-directory: samples/hello-world
-        run: |
-          haxelib run openfl build air
