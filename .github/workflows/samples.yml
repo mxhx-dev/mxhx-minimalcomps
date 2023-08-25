@@ -19,7 +19,7 @@ jobs:
           haxelib install lime 8.0.0 --quiet
           haxelib install openfl 9.2.0 --quiet
           haxelib git minimalcomps https://github.com/jasonsturges/minimalcomps-openfl.git --quiet
-          haxelib git feathersui-binding https://github.com/feathersui/feathersui-binding.git --quiet
+          haxelib git bindable https://github.com/mxhx-dev/bindable.git --quiet
           haxelib git mxhx-parser https://github.com/mxhx-dev/mxhx-parser.git --quiet
           haxelib git mxhx-component https://github.com/mxhx-dev/mxhx-component.git --quiet
           haxelib dev mxhx-minimalcomps $GITHUB_WORKSPACE
