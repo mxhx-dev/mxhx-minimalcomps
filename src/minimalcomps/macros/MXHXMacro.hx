@@ -27,6 +27,29 @@ class MXHXMacro {
 		mxhx.macros.MXHXComponent.setDataBindingCallback(createDataBindingExpression);
 		mxhx.macros.MXHXComponent.setDispatchEventCallback(createDispatchEventExpression);
 		mxhx.macros.MXHXComponent.setAddEventListenerCallback(createAddEventListenerExpression);
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Component", "width", "resize");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Component", "height", "resize");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Calendar", "day", "select");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Calendar", "month", "select");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Calendar", "year", "select");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.ColorChooser", "value", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.ComboBox", "selectedIndex", "select");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.ComboBox", "selectedItem", "select");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.InputText", "text", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Knob", "value", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.List", "selectedIndex", "select");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.List", "selectedItem", "select");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.NumericStepper", "value", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.RangeSlider", "lowValue", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.RangeSlider", "highValue", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.RotarySelector", "choice", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.ScrollBar", "value", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.ScrollSlider", "value", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Slider", "value", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Text", "text", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.UISlider", "value", "change");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.WheelMenu", "selectedIndex", "select");
+		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.WheelMenu", "selectedItem", "select");
 	}
 
 	private static function getLibraryPath():String {
