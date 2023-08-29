@@ -29,3 +29,9 @@ jobs:
           haxelib run openfl build neko
           haxelib run openfl build html5
           haxelib run openfl build hl
+      - name: Build samples/data-binding
+        working-directory: samples/data-binding
+        run: |
+          haxelib run openfl build neko
+          haxelib run openfl build html5
+          haxelib run openfl build hl

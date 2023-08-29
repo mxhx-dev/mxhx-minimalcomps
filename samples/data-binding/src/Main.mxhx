@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<m:Application xmlns:mx="https://ns.mxhx.dev/2024/mxhx"
+	xmlns:m="https://ns.mxhx.dev/minimalcomps/mxhx">
+	<m:HSlider id="slider" x="20.0" y="20.0"
+		value="0" minimum="0" maximum="10" tick="1"/>
+	<m:Label x="20.0" y="50.0" text="{Std.string(slider.value)}"/>
+</m:Application>
