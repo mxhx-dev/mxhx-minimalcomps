@@ -3,7 +3,7 @@
 ## Minimum Requirements
 
 - Haxe 4.2
-- [MinimalComps from Github](https://github.com/jasonsturges/minimalcomps-openfl) (0.9.2 from Haxelib is not compatible with modern OpenFL)
+- MinimalComps 1.0
 
 ## Installation
 

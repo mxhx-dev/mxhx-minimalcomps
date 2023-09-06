@@ -7,7 +7,7 @@
   "version": "1.0.0-alpha.1",
   "classPath": "src",
   "dependencies": {
-    "minimalcomps": "git:https://github.com/jasonsturges/minimalcomps-openfl.git",
+    "minimalcomps": "",
     "mxhx-component": "git:https://github.com/mxhx-dev/mxhx-component.git",
     "bindable": "git:https://github.com/mxhx-dev/bindable.git"
   },
