@@ -9,21 +9,8 @@
 package minimalcomps.macros;
 
 #if macro
-import haxe.io.Path;
-import haxe.macro.Context;
-import haxe.macro.Expr;
-
 class MXHXMacro {
-	private static final NS_URI = "https://ns.mxhx.dev/minimalcomps/mxhx";
-	private static final MANIFEST_FILE_NAME = "mxhx-manifest.xml";
-
 	public static function initialize():Void {
-		var libraryPath = getLibraryPath();
-		if (libraryPath == null) {
-			return;
-		}
-		var manifestPath = Path.join([libraryPath, MANIFEST_FILE_NAME]);
-		mxhx.macros.MXHXComponent.registerManifest(NS_URI, manifestPath);
 		mxhx.macros.MXHXComponent.setDataBindingCallback(createDataBindingExpression);
 		mxhx.macros.MXHXComponent.setDispatchEventCallback(createDispatchEventExpression);
 		mxhx.macros.MXHXComponent.setAddEventListenerCallback(createAddEventListenerExpression);
@@ -52,18 +39,6 @@ class MXHXMacro {
 		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.WheelMenu", "selectedItem", "select");
 	}
 
-	private static function getLibraryPath():String {
-		var t = Context.getModule("minimalcomps.macros.MXHXMacro");
-		var filePath:String = null;
-		switch (t[0]) {
-			case TInst(t, params):
-				filePath = Context.getPosInfos(t.get().pos).file;
-			default:
-				return null;
-		}
-		return Path.join([Path.directory(filePath), "..", "..", ".."]);
-	}
-
 	private static function createDataBindingExpression(sourceExpr:String, destExpr:String, documentExpr:String):String {
 		return 'mxhx.bindable.DataBinding.bind(${sourceExpr}, ${destExpr}, ${documentExpr})';
 	}
@@ -82,5 +57,3 @@ class MXHXMacro {
 	}
 }
 #end
-
-private class MXHXLookup {}
