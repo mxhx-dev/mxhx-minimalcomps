@@ -11,9 +11,11 @@ package minimalcomps.macros;
 #if macro
 class MXHXMacro {
 	public static function initialize():Void {
+		#if mxhx_component
 		mxhx.macros.MXHXComponent.setDataBindingCallback(createDataBindingExpression);
 		mxhx.macros.MXHXComponent.setDispatchEventCallback(createDispatchEventExpression);
 		mxhx.macros.MXHXComponent.setAddEventListenerCallback(createAddEventListenerExpression);
+		#end
 		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Component", "width", "resize");
 		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Component", "height", "resize");
 		mxhx.bindable.DataBinding.addBindableProperty("minimalcomps.components.Calendar", "day", "select");
