@@ -2,7 +2,7 @@
 <include>
 	<haxelib name="minimalcomps"/>
 	<haxelib name="bindable"/>
-	<haxelib name="mxhx-component"/>
+	<haxelib name="mxhx-resolver"/>
 	<haxeflag name="--macro" value="minimalcomps.macros.MXHXMacro.initialize()"/>
 	<haxeflag name="--macro" value="mxhx.resolver.MXHXResolvers.registerManifestFile('https://ns.mxhx.dev/minimalcomps/mxhx', '${haxelib:mxhx-minimalcomps}/mxhx-manifest.xml')"/>
 </include>

@@ -22,6 +22,7 @@ jobs:
           haxelib git bindable https://github.com/mxhx-dev/bindable.git --quiet
           haxelib git mxhx-parser https://github.com/mxhx-dev/mxhx-parser.git --quiet
           haxelib git mxhx-component https://github.com/mxhx-dev/mxhx-component.git --quiet
+          haxelib git mxhx-runtime-component https://github.com/mxhx-dev/mxhx-runtime-component.git --quiet
           haxelib dev mxhx-minimalcomps $GITHUB_WORKSPACE
       - name: Build samples/hello-world
         working-directory: samples/hello-world
@@ -31,6 +32,12 @@ jobs:
           haxelib run openfl build hl
       - name: Build samples/data-binding
         working-directory: samples/data-binding
+        run: |
+          haxelib run openfl build neko
+          haxelib run openfl build html5
+          haxelib run openfl build hl
+      - name: Build samples/runtime-hello-world
+        working-directory: samples/runtime-hello-world
         run: |
           haxelib run openfl build neko
           haxelib run openfl build html5
