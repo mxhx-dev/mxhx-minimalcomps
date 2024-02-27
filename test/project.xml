@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="MXHX MinimalComps Tests" package="mxhx.minimalcomps.tests" version="1.0.0" company="Bowler Hat LLC"/>
+	<app main="TestMain" file="MXHXFeathersUITests"/>
+	<window hidden="true"/>
+
+	<source path="src"/>
+	<source path="src-dev"/>
+	<haxelib name="utest"/>
+	<haxelib name="mxhx-minimalcomps"/>
+	<haxelib name="mxhx-component"/>
+	<haxelib name="mxhx-runtime-component"/>
+
+	<haxeflag name="--macro" value="include('minimalcomps', true)"/>
+	<haxeflag name="--macro" value="addGlobalMetadata('lime', '@:rtti', true, true, false)"/>
+	<haxeflag name="--macro" value="addGlobalMetadata('openfl', '@:rtti', true, true, false)"/>
+	<haxeflag name="--macro" value="addGlobalMetadata('minimalcomps', '@:rtti', true, true, false)"/>
+
+	<template path="templates" if="html5"/>
+</project>

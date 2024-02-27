@@ -20,7 +20,6 @@ jobs:
           haxelib install openfl --quiet
           haxelib install minimalcomps --quiet
           haxelib git bindable https://github.com/mxhx-dev/bindable.git --quiet
-          haxelib git mxhx-parser https://github.com/mxhx-dev/mxhx-parser.git --quiet
           haxelib git mxhx-component https://github.com/mxhx-dev/mxhx-component.git --quiet
           haxelib git mxhx-runtime-component https://github.com/mxhx-dev/mxhx-runtime-component.git --quiet
           haxelib dev mxhx-minimalcomps $GITHUB_WORKSPACE
