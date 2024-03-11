@@ -21,7 +21,8 @@ class MXHXRuntimeComponentTests extends Test {
 		', {
 				idMap: idMap
 			});
-		var app = Std.downcast(result, Application);
+		Assert.isOfType(result, Application);
+		var app = cast(result, Application);
 		Assert.notNull(app);
 
 		Assert.equals(123.4, idMap.get("float"));
@@ -29,7 +30,8 @@ class MXHXRuntimeComponentTests extends Test {
 		Assert.isTrue(idMap.get("boolean"));
 		Assert.equals("hello", idMap.get("string"));
 
-		var button = Std.downcast(idMap.get("button"), PushButton);
+		Assert.isOfType(idMap.get("button"), PushButton);
+		var button = cast(idMap.get("button"), PushButton);
 		Assert.notNull(button);
 		Assert.equals("hi", button.label);
 		Assert.equals(result, button.parent);

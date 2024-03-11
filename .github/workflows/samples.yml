@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: krdlab/setup-haxe@v1
         with:
-          haxe-version: 4.3.3
+          haxe-version: 4.3.4
       - name: Set up Haxelib dependencies
         run: |
           haxelib install lime --quiet
@@ -22,7 +22,7 @@ jobs:
           haxelib git bindable https://github.com/mxhx-dev/bindable.git --quiet
           haxelib git mxhx-component https://github.com/mxhx-dev/mxhx-component.git --quiet
           haxelib git mxhx-runtime-component https://github.com/mxhx-dev/mxhx-runtime-component.git --quiet
-          haxelib dev mxhx-minimalcomps $GITHUB_WORKSPACE
+          haxelib dev mxhx-minimalcomps ${{ github.workspace }}
       - name: Build samples/hello-world
         working-directory: samples/hello-world
         run: |

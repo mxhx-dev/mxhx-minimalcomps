@@ -11,10 +11,11 @@
 	<haxelib name="mxhx-component"/>
 	<haxelib name="mxhx-runtime-component"/>
 
-	<haxeflag name="--macro" value="include('minimalcomps', true)"/>
+	<!-- addGlobalMetadata() must appear before include() to work on Haxe 4.2 and earlier -->
 	<haxeflag name="--macro" value="addGlobalMetadata('lime', '@:rtti', true, true, false)"/>
 	<haxeflag name="--macro" value="addGlobalMetadata('openfl', '@:rtti', true, true, false)"/>
 	<haxeflag name="--macro" value="addGlobalMetadata('minimalcomps', '@:rtti', true, true, false)"/>
+	<haxeflag name="--macro" value="include('minimalcomps', true)"/>
 
 	<template path="templates" if="html5"/>
 </project>
