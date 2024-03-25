@@ -36,3 +36,16 @@ or
 ```xml
 <haxelib name="mxhx-runtime-component" />
 ```
+
+## Usage
+
+The MinimalComps namespace for MXHX is _https://ns.mxhx.dev/minimalcomps/mxhx_.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<m:Application xmlns:mx="https://ns.mxhx.dev/2024/mxhx"
+	xmlns:m="https://ns.mxhx.dev/minimalcomps/mxhx">
+	<mx:Declarations>
+	</mx:Declarations>
+</m:Application>
+```
