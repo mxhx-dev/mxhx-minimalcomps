@@ -1,5 +1,8 @@
 <componentPackage>
   <component id="Application" class="minimalcomps.components.mxhx.Application"/>
+  <component id="Panel" class="minimalcomps.components.mxhx.Panel"/>
+  <component id="Window" class="minimalcomps.components.mxhx.Window"/>
+
   <component id="Accordion" class="minimalcomps.components.Accordion"/>
   <component id="ArcButton" class="minimalcomps.components.ArcButton"/>
   <component id="Calendar" class="minimalcomps.components.Calendar"/>
@@ -20,7 +23,6 @@
   <component id="ListItem" class="minimalcomps.components.ListItem"/>
   <component id="Meter" class="minimalcomps.components.Meter"/>
   <component id="NumericStepper" class="minimalcomps.components.NumericStepper"/>
-  <component id="Panel" class="minimalcomps.components.Panel"/>
   <component id="ProgressBar" class="minimalcomps.components.ProgressBar"/>
   <component id="PushButton" class="minimalcomps.components.PushButton"/>
   <component id="RadioButton" class="minimalcomps.components.RadioButton"/>
@@ -34,7 +36,6 @@
   <component id="VSlider" class="minimalcomps.components.VSlider"/>
   <component id="VUISlider" class="minimalcomps.components.VUISlider"/>
   <component id="WheelMenu" class="minimalcomps.components.WheelMenu"/>
-  <component id="Window" class="minimalcomps.components.Window"/>
 
   <component id="BarChart" class="minimalcomps.charts.BarChart"/>
   <component id="LineChart" class="minimalcomps.charts.LineChart"/>
