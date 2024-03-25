@@ -7,7 +7,7 @@ import utest.Assert;
 import utest.Test;
 
 class MXHXRuntimeComponentTests extends Test {
-	public function testMXHXRuntimeComponentApplication():Void {
+	public function testMXHXRuntimeComponent_Application():Void {
 		var idMap:Map<String, Any> = [];
 		var result = MXHXRuntimeComponent.withMarkup('
 			<m:Application xmlns:mx="https://ns.mxhx.dev/2024/basic"
@@ -36,14 +36,14 @@ class MXHXRuntimeComponentTests extends Test {
 		var button = cast(idMap.get("button"), PushButton);
 		Assert.notNull(button);
 		Assert.equals("hi", button.label);
-		Assert.equals(result, button.parent);
+		Assert.equals(app, button.parent);
 
 		Assert.equals(1, app.numChildren);
 		var child = app.getChildAt(0);
 		Assert.equals(button, child);
 	}
 
-	public function testMXHXRuntimeComponentPanel():Void {
+	public function testMXHXRuntimeComponent_PanelChildren():Void {
 		var idMap:Map<String, Any> = [];
 		var result = MXHXRuntimeComponent.withMarkup('
 			<m:Panel xmlns:mx="https://ns.mxhx.dev/2024/basic"
@@ -60,8 +60,8 @@ class MXHXRuntimeComponentTests extends Test {
 				idMap: idMap
 			});
 		Assert.isOfType(result, Panel);
-		var app = cast(result, Panel);
-		Assert.notNull(app);
+		var panel = cast(result, Panel);
+		Assert.notNull(panel);
 
 		Assert.equals(123.4, idMap.get("float"));
 		Assert.equals(5678, idMap.get("integer"));
@@ -72,14 +72,14 @@ class MXHXRuntimeComponentTests extends Test {
 		var button = cast(idMap.get("button"), PushButton);
 		Assert.notNull(button);
 		Assert.equals("hi", button.label);
-		Assert.equals(app.content, button.parent);
+		Assert.equals(panel.content, button.parent);
 
-		Assert.equals(1, app.content.numChildren);
-		var child = app.content.getChildAt(0);
+		Assert.equals(1, panel.content.numChildren);
+		var child = panel.content.getChildAt(0);
 		Assert.equals(button, child);
 	}
 
-	public function testMXHXRuntimeComponentWindow():Void {
+	public function testMXHXRuntimeComponent_WindowChildren():Void {
 		var idMap:Map<String, Any> = [];
 		var result = MXHXRuntimeComponent.withMarkup('
 			<m:Window xmlns:mx="https://ns.mxhx.dev/2024/basic"
@@ -96,8 +96,8 @@ class MXHXRuntimeComponentTests extends Test {
 				idMap: idMap
 			});
 		Assert.isOfType(result, Window);
-		var app = cast(result, Window);
-		Assert.notNull(app);
+		var window = cast(result, Window);
+		Assert.notNull(window);
 
 		Assert.equals(123.4, idMap.get("float"));
 		Assert.equals(5678, idMap.get("integer"));
@@ -108,10 +108,10 @@ class MXHXRuntimeComponentTests extends Test {
 		var button = cast(idMap.get("button"), PushButton);
 		Assert.notNull(button);
 		Assert.equals("hi", button.label);
-		Assert.equals(app.content, button.parent);
+		Assert.equals(window.content, button.parent);
 
-		Assert.equals(1, app.content.numChildren);
-		var child = app.content.getChildAt(0);
+		Assert.equals(1, window.content.numChildren);
+		var child = window.content.getChildAt(0);
 		Assert.equals(button, child);
 	}
 }

@@ -7,7 +7,7 @@ import utest.Assert;
 import utest.Test;
 
 class MXHXComponentTests extends Test {
-	public function testMXHXComponentApplication():Void {
+	public function testMXHXComponent_Application():Void {
 		var result = MXHXComponent.withMarkup('
 			<m:Application xmlns:mx="https://ns.mxhx.dev/2024/basic"
 				xmlns:m="https://ns.mxhx.dev/minimalcomps/mxhx">
@@ -38,7 +38,7 @@ class MXHXComponentTests extends Test {
 		Assert.equals(result.button, child);
 	}
 
-	public function testMXHXComponentPanel():Void {
+	public function testMXHXComponent_PanelChildren():Void {
 		var result = MXHXComponent.withMarkup('
 			<m:Panel xmlns:mx="https://ns.mxhx.dev/2024/basic"
 				xmlns:m="https://ns.mxhx.dev/minimalcomps/mxhx">
@@ -69,7 +69,7 @@ class MXHXComponentTests extends Test {
 		Assert.equals(result.button, child);
 	}
 
-	public function testMXHXComponentWindow():Void {
+	public function testMXHXComponent_WindowChildren():Void {
 		var result = MXHXComponent.withMarkup('
 			<m:Window xmlns:mx="https://ns.mxhx.dev/2024/basic"
 				xmlns:m="https://ns.mxhx.dev/minimalcomps/mxhx">
