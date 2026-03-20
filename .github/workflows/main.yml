@@ -1,4 +1,4 @@
-name: Tests
+name: CI
 
 on:
   push:
@@ -6,12 +6,29 @@ on:
     branches:
       - main
 
-################################################################################
-# NOTE: we don't test the flash/air targets because the minimalcomps library is
-# not compatible with these targets
-################################################################################
-
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/upload-artifact@v7
+        with:
+          name: mxhx-minimalcomps-haxelib
+          path: |
+            src/
+            haxelib.json
+            include.xml
+            mxhx-manifest.xml
+            README.md
+            LICENSE
+            NOTICE
+            CHANGELOG.md
+          if-no-files-found: error
+  ################################################################################
+  # NOTE: we don't test the flash/air targets because the minimalcomps library is
+  # not compatible with these targets
+  ################################################################################
   tests-misc:
     strategy:
       matrix:
@@ -72,3 +89,37 @@ jobs:
         working-directory: test
         run: |
           haxelib run openfl test hl
+  samples-misc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: krdlab/setup-haxe@v2
+        with:
+          haxe-version: 4.3.7
+      - name: Set up Haxelib dependencies
+        run: |
+          haxelib install lime --quiet
+          haxelib install openfl --quiet
+          haxelib install minimalcomps --quiet
+          haxelib git bindable https://github.com/mxhx-dev/bindable.git --quiet
+          haxelib git mxhx-component https://github.com/mxhx-dev/mxhx-component.git --quiet
+          haxelib git mxhx-runtime-component https://github.com/mxhx-dev/mxhx-runtime-component.git --quiet
+          haxelib dev mxhx-minimalcomps ${{ github.workspace }}
+      - name: Build samples/hello-world
+        working-directory: samples/hello-world
+        run: |
+          haxelib run openfl build neko
+          haxelib run openfl build html5
+          haxelib run openfl build hl
+      - name: Build samples/data-binding
+        working-directory: samples/data-binding
+        run: |
+          haxelib run openfl build neko
+          haxelib run openfl build html5
+          haxelib run openfl build hl
+      - name: Build samples/runtime-hello-world
+        working-directory: samples/runtime-hello-world
+        run: |
+          haxelib run openfl build neko
+          haxelib run openfl build html5
+          haxelib run openfl build hl
